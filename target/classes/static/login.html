@@ -1,0 +1,34 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Login - AI Power3D</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+body { background: linear-gradient(120deg,#ffecd2,#fcb69f); min-height:100vh; display:flex; align-items:center; justify-content:center; }
+.panel { width:1000px; display:flex; box-shadow:0 10px 30px rgba(0,0,0,0.15); border-radius:8px; overflow:hidden; }
+.left { flex:1.1; background:#222; color:#fff; padding:48px; display:flex; flex-direction:column; justify-content:center; align-items:center; }
+.right { flex:1; background: linear-gradient(90deg,#ff6b35,#ff8a4c); padding:48px; display:flex; flex-direction:column; justify-content:center; }
+</style>
+</head><body>
+<div class="panel">
+ <div class="left"><h3>AI-Powered Student Feedback System</h3><p>Login for Student or Admin</p></div>
+ <div class="right">
+  <label style="color:#fff">User Type</label>
+  <select id="userType" class="form-select mb-2"><option value="student">Student</option><option value="admin">Admin</option></select>
+  <input id="cid" class="form-control mb-2" placeholder="College ID">
+  <input id="pwd" type="password" class="form-control mb-3" placeholder="Password (admin/admin)">
+  <div class="d-flex gap-2"><button id="loginBtn" class="btn btn-light">Sign in</button><button id="guestBtn" class="btn btn-outline-light">Guest</button></div>
+ </div>
+</div>
+<script>
+document.getElementById('loginBtn').addEventListener('click', function(){
+  const type = document.getElementById('userType').value;
+  const cid = document.getElementById('cid').value || '';
+  const pwd = document.getElementById('pwd').value || '';
+  if (type === 'admin') {
+    if (cid === 'admin' && pwd === 'admin') { window.location.href = '/dashboard.html'; }
+    else { alert('Invalid admin credentials. Use admin/admin'); }
+  } else { window.location.href = '/student.html?cid=' + encodeURIComponent(cid || 'guest'); }
+});
+document.getElementById('guestBtn').addEventListener('click', function(){ window.location.href = '/student.html?cid=guest'; });
+</script>
+</body></html>
