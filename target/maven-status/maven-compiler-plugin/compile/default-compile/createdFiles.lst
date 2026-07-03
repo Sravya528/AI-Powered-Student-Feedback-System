@@ -1,6 +1,0 @@
-com\ai\feedback\repository\FeedbackRepository.class
-com\ai\feedback\controller\FeedbackController.class
-com\ai\feedback\entity\FeedbackEntity.class
-com\ai\feedback\service\SentimentAnalyzer.class
-com\ai\feedback\model\FeedbackRequest.class
-com\ai\feedback\Application.class
