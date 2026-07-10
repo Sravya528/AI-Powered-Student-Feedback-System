@@ -1,7 +1,7 @@
 services:
   - type: web
     name: ai-powered-student-feedback-system
-    runtime: java
+    env: java
     plan: free
     buildCommand: ./mvnw clean package -DskipTests
     startCommand: java -jar target/ai-power3d-feedback-1.0.3.jar
