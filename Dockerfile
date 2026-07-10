@@ -7,6 +7,6 @@ COPY . .
 RUN chmod +x mvnw
 RUN ./mvnw clean package -DskipTests
 
-EXPOSE 8080
+EXPOSE 9090
 
 CMD ["java", "-jar", "target/ai-power3d-feedback-1.0.3.jar"]
